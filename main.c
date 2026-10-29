@@ -29,11 +29,11 @@ void afficher() {
 /* Retourne 1 si le joueur a aligné 3 symboles, sinon 0 */
 int a_gagne(char s) {
     for (int i = 0; i < 3; i++) {
-        if (grille[i][0] == s && grille[i][1] == s && grille[i][2] == s) return 1; /* ligne */
-        if (grille[0][i] == s && grille[1][i] == s && grille[2][i] == s) return 1; /* colonne */
+        if (grille[i][0] == s && grille[i][1] == s && grille[i][2] == s) return 1;
+        if (grille[0][i] == s && grille[1][i] == s && grille[2][i] == s) return 1;
     }
-    if (grille[0][0] == s && grille[1][1] == s && grille[2][2] == s) return 1;     /* diagonale */
-    if (grille[0][2] == s && grille[1][1] == s && grille[2][0] == s) return 1;     /* diagonale */
+    if (grille[0][0] == s && grille[1][1] == s && grille[2][2] == s) return 1;
+    if (grille[0][2] == s && grille[1][1] == s && grille[2][0] == s) return 1;
     return 0;
 }
 
@@ -51,7 +51,7 @@ void jouer(char joueur) {
     while (1) {
         printf("Joueur %c, choisissez une case (1-9) : ", joueur);
         if (scanf("%d", &numero) != 1) {
-            while (getchar() != '\n');          /* vide la saisie incorrecte */
+            while (getchar() != '\n');
             printf("Entrez un nombre.\n");
             continue;
         }
@@ -91,7 +91,7 @@ int main() {
             printf("Match nul !\n");
             break;
         }
-        joueur = (joueur == 'X') ? 'O' : 'X';   /* change de joueur */
+        joueur = (joueur == 'X') ? 'O' : 'X';
     }
     return 0;
 }
